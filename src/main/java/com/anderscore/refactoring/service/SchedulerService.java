@@ -19,8 +19,6 @@ public interface SchedulerService {
 	
 	long count();
 	
-	String convertToCsv(Scheduler scheduler);
-	
 	void update(Scheduler scheduler);
 	
 	void delete(Scheduler scheduler);

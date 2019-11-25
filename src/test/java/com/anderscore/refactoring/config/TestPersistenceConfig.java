@@ -6,7 +6,7 @@ import org.flywaydb.core.Flyway;
 import org.springframework.context.annotation.*;
 import javax.sql.DataSource;
 
-//@Configuration
+@Configuration
 @Profile("test")
 @Import(PersistenceConfig.class)
 public class TestPersistenceConfig {

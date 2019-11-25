@@ -29,7 +29,6 @@
 		<junit-platform-launcher.version>1.5.1</junit-platform-launcher.version>
 		<testcontainers.version>1.12.0</testcontainers.version>
 		<flyway-spring5-test.version>5.2.4</flyway-spring5-test.version>
-		<selenium-chrome-driver.version>3.141.59</selenium-chrome-driver.version>
 
 		<spring-boot-maven-plugin.version>2.1.6.RELEASE</spring-boot-maven-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
@@ -120,21 +119,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>selenium</artifactId>
-			<version>${testcontainers.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.flywaydb.flyway-test-extensions</groupId>
 			<artifactId>flyway-spring5-test</artifactId>
 			<version>${flyway-spring5-test.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-chrome-driver</artifactId>
-			<version>${selenium-chrome-driver.version}</version>
 			<scope>test</scope>
 		</dependency>
 
