@@ -1,3 +1,4 @@
+-- deactivate for Testcontainers
 SET DATABASE SQL SYNTAX PGS TRUE;
 
 CREATE TABLE scheduler

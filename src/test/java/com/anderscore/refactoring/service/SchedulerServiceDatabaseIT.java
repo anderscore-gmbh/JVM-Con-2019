@@ -1,12 +1,14 @@
 package com.anderscore.refactoring.service;
 
-import com.anderscore.refactoring.config.TestConfig;
+import com.anderscore.refactoring.config.TestWithDatabaseConfig;
 import com.anderscore.refactoring.data.Scheduler;
+import com.anderscore.refactoring.extension.DbContainerExtension;
 import com.anderscore.refactoring.service.SchedulerService;
 
 import org.flywaydb.test.FlywayTestExecutionListener;
 import org.flywaydb.test.annotation.FlywayTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -20,10 +22,12 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
-@SpringJUnitConfig(TestConfig.class)
+@SpringJUnitConfig(TestWithDatabaseConfig.class)
 @ActiveProfiles("test")
+// Activate for Testcontainers
+//@ExtendWith(DbContainerExtension.class)
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class, FlywayTestExecutionListener.class})
-public class SchedulerServiceTest {
+public class SchedulerServiceDatabaseIT {
 
     @Inject
     private SchedulerService schedulerService;

@@ -12,11 +12,12 @@ import org.testcontainers.containers.JdbcDatabaseContainer;
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
-@Configuration
+// Activate for Testcontainers
+//@Configuration
 @Profile("test")
 @Import(PersistenceConfig.class)
 @ComponentScan(basePackageClasses = DatabaseContainerHolder.class)
-public class TestContainersPersistenceConfig {
+public class TestcontainersPersistenceConfig {
 
     @Inject
     private Environment env;
@@ -36,6 +37,7 @@ public class TestContainersPersistenceConfig {
     }
 
     @Bean
+    @Primary
     public DataSource dataSource(DatabaseContainerHolder containerHolder) {
         JdbcDatabaseContainer<?> dbContainer = containerHolder.get();
 
